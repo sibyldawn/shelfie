@@ -17,6 +17,7 @@ class App extends Component {
     this.state={
       inventory: [],
     };
+    // this.addProduct = this.addProduct.bind(this);
   }
  
   componentDidMount() {
@@ -28,6 +29,18 @@ class App extends Component {
       })
     })
   }
+  // addProduct(newProduct) {
+  //   let newProduct = {
+  //     name: this.name.value,
+  //     price: this.price.value,
+  //     imageUrl: this.imageUrl.value
+  //   };
+  //   axios.post(`${baseUrl}`, newProduct).then(response =>{
+  //       console.log('newProduct',response.data)
+  //       this.getUpdatedInventory(response.data)
+  //   })
+  // }
+
 
   getUpdatedInventory = (updated) => {
     this.setState({
@@ -37,37 +50,11 @@ class App extends Component {
   }
 
   render() {
-    const inventory = this.state.inventory.map( r => {
-      return <div className ="wrap" key={r.id}>
-              <div className="gallery" >
-              <img src={r.image_url} alt="product" className="pics"/>
-              </div>
-
-              <div className="label-containerFlex">
-              <div id="name">{r.name}</div>
-                    
-                {/* <Edit id={r.id} 
-                name={r.name}
-                url={r.url}
-                image={r.image}
-                getUpdatedInventory={this.getUpdatedInventory}
-                />
-                <Delete id={r.id}
-                  action={() => this.deleteRecipe(r.id)}
-                /> */}
-    </div>
-  </div>
-    })
-
     return (
       <div className="App">
-        <header className="App-header">
-          <Header/>
-        </header>
-        <div className="Body-Flex">BODY 
-         <Form/>
-           
-        </div>
+         <Dashboard/>
+         <Form addProductFn={this.addProduct}
+         />
       </div>
     );
   }

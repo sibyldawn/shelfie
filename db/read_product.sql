@@ -1,1 +1,1 @@
-select * from inventory where id = $4;
+select * from inventory where id = ${id};

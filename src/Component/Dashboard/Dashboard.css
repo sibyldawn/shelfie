@@ -1,5 +1,10 @@
 .gallery{
     background: blue;
-    height: 1200px;
-    width: 500px;
+    height: 200px;
+    width: 200px;
+}
+
+img{
+    max-height:200px;
+    max-width:200px;
 }

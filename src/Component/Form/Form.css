@@ -1,10 +1,22 @@
-.forms{
+.wrap{
     background: gray;
     height: 500px;
     width: 400px;
 }
 
 input{
-    background: orange;
+   background: orange;
+    margin: 5px 35px;
     height: 20px;
+    width: 80%;
+}
+
+.image{
+    margin: 10px 35px;
+    padding: 10px;
+
+}
+
+button{
+    margin: 5px 50px;
 }

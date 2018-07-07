@@ -13,9 +13,9 @@ module.exports = {
   
     getOne: ( req, res, next ) => {
       const dbInstance = req.app.get('db');
-      const { params } = req;
+      const { id } = req.params;
   
-      dbInstance.read_product([ params.id ])
+      dbInstance.read_product( id )
         .then( product => res.status(200).send( product ) )
         .catch( err => {
           res.status(500).send({errorMessage: "ERROR"});
