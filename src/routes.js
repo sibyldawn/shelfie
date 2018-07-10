@@ -9,5 +9,8 @@ export default (
         <Route exact path="/" component = {App}/>
         <Route path="/dashboard" component = {Dashboard}/>
         <Route path="/form" component = {Form}/>
+        <Route path="/" render={()=>{
+            return <p>ERROR 404 Not Found</p><Link to="/">Home</Link>
+        }}>
     </Switch>
 )
